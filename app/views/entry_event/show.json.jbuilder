@@ -1,0 +1,1 @@
+json.set! :attendance_id, @attendance.id

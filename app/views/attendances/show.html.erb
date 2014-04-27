@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>In:</strong>
+  <%= @attendance.in %>
+</p>
+
+<p>
+  <strong>Out:</strong>
+  <%= @attendance.out %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<%= link_to 'Back', attendances_path %>

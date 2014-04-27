@@ -1,0 +1,47 @@
+<h1>Home</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Event's I am Admin of: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Event's I am a client of: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @client_events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Menu</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= link_to 'New Event', new_event_path %></td>
+      </tr>
+      <tr>
+        <td><%= link_to 'View All Events', events_path %></td>
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @event.end %>
+</p>
+
+<p>
+  <strong>Beacon:</strong>
+  <%= @event.beacon %>
+</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th align="left">Admins:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event.admin_users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th align="left">Clients:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event.client_users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% @event.sub_events.each do |sub_event| %>
+
+  <h1><%= sub_event.date %></h1>
+
+  <table border="1">
+  <thead>
+    <tr>
+      <th align="left">Email:</th>
+      <th align="left">Time In:</th>
+      <th align="left">Time Out:</th>
+      <th align="left">Status:</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% sub_event.attendances.each do |attendance| %>
+    <tr>
+      <td><%= attendance.user.email %></td>
+      <td><%= attendance.in %></td>
+      <td><%= attendance.out %></td>
+      <td>Late, On-Time, Absent</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
