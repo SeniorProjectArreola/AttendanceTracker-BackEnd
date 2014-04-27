@@ -67,12 +67,14 @@
   </thead>
   <tbody>
   <% sub_event.attendances.each do |attendance| %>
-    <tr>
-      <td><%= attendance.user.email %></td>
-      <td><%= attendance.in %></td>
-      <td><%= attendance.out %></td>
-      <td>Late, On-Time, Absent</td>
-    </tr>
+    <% if @event.client_users.include? attendance.user %>
+      <tr>
+        <td><%= attendance.user.email %></td>
+        <td><%= attendance.in %></td>
+        <td><%= attendance.out %></td>
+        <td></td>
+      </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>
