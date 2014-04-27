@@ -2,7 +2,6 @@
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
       <% @event.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,31 +11,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, :class => "regLabel" %><br>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :start %><br>
-    <%= f.time_select :start, :ampm => 'true' %>
+    <%= f.label :start, :class => "regLabel" %><br>
+    <%= f.time_select :start, :class => "form-control", :ampm => 'true' %>
   </div>
   <div class="field">
-    <%= f.label :end %><br>
-    <%= f.time_select :end, :ampm => 'true' %>
+    <%= f.label :end, :class => "regLabel" %><br>
+    <%= f.time_select :end, :class => "form-control", :ampm => 'true' %>
   </div>
   <div class="field">
-    <%= f.label :beacon %><br>
-    <%= f.text_field :beacon %>
+    <%= f.label :beacon, :class => "regLabel" %><br>
+    <%= f.text_field :beacon, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :admins %><br>
+    <%= f.label :admins, :class => "regLabel" %><br>
     <%= collection_check_boxes(:event, :admin_user_ids, User.all, :id, :email) %>
   </div>
   <div class="field">
-    <%= f.label :clients %><br>
+    <%= f.label :clients, :class => "regLabel" %><br>
     <%= collection_check_boxes(:event, :client_user_ids, User.all, :id, :email) %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-blue signin-btn" %>
   </div>
 <% end %>

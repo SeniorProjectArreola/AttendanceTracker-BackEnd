@@ -1,0 +1,23 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 50px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #2b91bc;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+  color: #fff;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: .9em;
+}
