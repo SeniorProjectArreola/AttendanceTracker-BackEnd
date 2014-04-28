@@ -13,13 +13,7 @@
       <ul class="nav navbar-nav side-nav">
         <li class="list-label">My Events:</li>
         <% @admin_events.each do |event| %>
-        <li class="active"><%= link_to event.name, event %></li>
-        <% end %>
-        <% if false %>
-        <li class="list-label-b">Event's I am Attending:</li>
-        <% @client_events.each do |event| %>
-        <li class="active"><%= link_to event.name, event %></li>
-        <% end %>
+          <li class="active"><%= link_to event.name, event %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right navbar-user">

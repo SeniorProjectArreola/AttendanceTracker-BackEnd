@@ -11,15 +11,9 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
-        <% if false %>
         <li class="list-label">My Events:</li>
-        <% @admin_events.each do |event| %>
+        <% current_user.admin_events.each do |event| %>
         <li class="active"><%= link_to event.name, event %></li>
-        <% end %>
-        <li class="list-label-b">Event's I am Attending:</li>
-        <% @client_events.each do |event| %>
-        <li class="active"><%= link_to event.name, event %></li>
-        <% end %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right navbar-user">
