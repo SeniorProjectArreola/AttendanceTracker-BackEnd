@@ -25,6 +25,7 @@ body{
   #page-wrapper {
 	padding: 3% 4%;
   }
+}
 
 label {
 	font-weight: normal !important;
@@ -44,11 +45,10 @@ h2, h3{font-weight: 400;}
     padding-left: 40px;
   }
 }
+
 .main .page-header {
   margin-top: 0;
 }
-
-
 
 .navbar-default {
 	background-color: #fff !important;
@@ -86,6 +86,7 @@ h2, h3{font-weight: 400;}
     margin-bottom: 30px;
     color: #4d4d4d;
 }
+
 .regHeader-img>img{
     margin: 0 auto;
     display: block;
@@ -93,7 +94,6 @@ h2, h3{font-weight: 400;}
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 
 .registration-form>form>.col-xs-12>.form-group>input{
     font-weight: lighter;
@@ -188,17 +188,3 @@ h2, h3{font-weight: 400;}
 	margin: 0 auto !important;
 	display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

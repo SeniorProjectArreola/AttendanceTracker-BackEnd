@@ -1,9 +1,9 @@
 module EventsHelper
-	def time_status(attendance)
-    if Time.now.between?(attendance.in, attendance.out)
-      return 'On Time'
-    else
-      return 'Late'
-    end
+	def time_status(event,attendance)
+	    if attendance.in.between?(event.start, event.end)
+	      return 'On Time'
+	    else
+	      return 'Late'
+	    end
 	end
 end

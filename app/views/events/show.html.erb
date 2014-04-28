@@ -109,7 +109,7 @@
                 <td><%= attendance.user.email %></td>
                 <td><%= attendance.in %></td>
                 <td><%= attendance.out %></td>
-                <td></td>
+                <td><%= time_status(@event,attendance) %></td>
               </tr>
             <% end %>
           <% end %>
