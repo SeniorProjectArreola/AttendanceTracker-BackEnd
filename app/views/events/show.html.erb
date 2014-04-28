@@ -39,11 +39,11 @@
       </h3>
       <p>
         <strong>Start:</strong>
-        <%= @event.start %>
+        <%= @event.start.strftime("%I:%M %p") %>
       </p>
       <p>
         <strong>End:</strong>
-        <%= @event.end %>
+        <%= @event.end.strftime("%I:%M %p") %>
       </p>
       <p style="margin-bottom:40px;">
         <strong>Beacon:</strong>
@@ -101,8 +101,12 @@
             <% if @event.client_users.include? attendance.user %>
               <tr>
                 <td><%= attendance.user.email %></td>
-                <td><%= attendance.in %></td>
-                <td><%= attendance.out %></td>
+                <td><%= attendance.in.strftime("%I:%M %p") %></td>
+                <td>
+                <% if !attendance.out.nil? %> 
+                  <%= attendance.out.strftime("%I:%M %p") %>
+                <% end %>
+                </td>
                 <td><%= time_status(@event,attendance) %></td>
               </tr>
             <% end %>
