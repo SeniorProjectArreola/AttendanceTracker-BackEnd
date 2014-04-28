@@ -101,13 +101,21 @@
             <% if @event.client_users.include? attendance.user %>
               <tr>
                 <td><%= attendance.user.email %></td>
-                <td><%= attendance.in.strftime("%I:%M %p") %></td>
+                <td>
+                  <% if !attendance.in.nil? %> 
+                    <%= attendance.in.strftime("%I:%M %p") %>
+                  <% end %>
+                </td>
                 <td>
                 <% if !attendance.out.nil? %> 
                   <%= attendance.out.strftime("%I:%M %p") %>
                 <% end %>
                 </td>
-                <td><%= time_status(@event,attendance) %></td>
+                <td>
+                <% if !attendance.in.nil? %>
+                  <%= time_status(@event,attendance) %>
+                <% end %>
+                </td>
               </tr>
             <% end %>
           <% end %>
