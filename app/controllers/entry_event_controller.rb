@@ -13,14 +13,14 @@ class EntryEventController < ApplicationController
   	if entry_action?
   		@attendance.in = params[:time_in]
   	else
-  		@attendance.out = params[:time_out]
+  		@attendance.out = params[:time_out] # Time out must always come with attendance_id, otherwise will cause an error later on.
   	end
 
   	@event = Event.find_by beacon: params[:beacon_id] # If beacon is not linked to any event, next line will cause an error.
     @sub_event = SubEvent.where(:date => Date.today, :event_id => @event.id).first_or_create
   	
   	@attendance.user_id = params[:user_id]
-  	@attendance.sub_event_id = @sub_event.id
+  	@attendance.sub_event = @sub_event
   	@attendance.save
 
     respond_to do |format|
